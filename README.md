@@ -1,4 +1,4 @@
-## vagrant
+# vagrant
 
 # Requirements
 * VirtualBox
@@ -7,7 +7,8 @@
 *	Virtualization enabled in the BIOS settings
 
 # On your first visit
-	vagrant up
+* look at all files and whether you want something to be changed
+*	vagrant up
 
 # To launch the machine and connect with it
 *	(vagrant up)
@@ -15,5 +16,4 @@
 *	cd /code/meet\_here/backend
 *	crossbar start
 
-Now the server is running and you can use the browser of your host system to connect with it at
-localhost with the specified port. Files can be edited both at the host and at the guest system.
+Now the server is running and you can use the browser of your host system to connect with it at localhost with the specified port. Files can be edited both at the host and at the guest system.
