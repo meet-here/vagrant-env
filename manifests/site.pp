@@ -62,3 +62,15 @@ exec { "pip3_install_autobahn":
     provider => shell,
     require => Package["python-pip", "build-essential", "libssl-dev",  "libffi-dev"],
 }
+
+# install Ruby for using the SASS compiler
+package { "ruby":
+    ensure => present,
+    require => Exec["update"],
+}
+
+exec { "install_sass":
+    command => "gem install sass",
+    provider => "shell",
+    require => Package["ruby"],
+}
