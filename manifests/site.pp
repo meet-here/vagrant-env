@@ -74,3 +74,26 @@ exec { "install_sass":
     provider => "shell",
     require => Package["ruby"],
 }
+
+#install node, npm & bower
+package { "npm":
+	ensure => present,
+	require => Exec["update"],
+}
+
+package { "nodejs-legacy":
+	ensure => present,
+	require => Exec["update"],
+}
+
+package { "git":
+	ensure => present,
+	require => Exec["update"],
+}
+
+exec { "install_bower":
+	command => "npm -g install bower",
+	provider => "shell",
+	require => Package["npm"],
+}
+
