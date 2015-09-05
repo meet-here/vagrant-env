@@ -4,9 +4,9 @@
 Vagrant.configure(2) do |config|
 
   config.vm.box = "puppetlabs/ubuntu-14.04-64-puppet"
-  config.vm.provision "puppet" do |puppet|
-    puppet.manifests_path = "manifests"
-    puppet.manifest_file  = "site.pp"
+  config.vm.provision :puppet do |puppet|
+    puppet.environment_path = "environments"
+    puppet.environment = "meethere"
   end
 
   config.vm.network "forwarded_port", guest: 8080, host: 8080
